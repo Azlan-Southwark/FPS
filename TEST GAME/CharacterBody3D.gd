@@ -6,11 +6,11 @@ func  _physics_process(delta):
 	var Direction = -$Camera3D.global_transform.basis.z
 	
 
-	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		#var NewBullet = Bullet.instantiate()
-		#$"..".add_child(NewBullet)
-		#NewBullet.global_position = $Camera3D/Marker3D.global_position
-		#NewBullet.velocity = Direction * Speed * 20
+	if Input.is_action_just_pressed("Shoot"):
+		var NewBullet = Bullet.instantiate()
+		$"..".add_child(NewBullet)
+		NewBullet.global_position = $Camera3D/Marker3D.global_position
+		NewBullet.velocity = Direction * Speed * 20
 	
 	move_and_slide()
 

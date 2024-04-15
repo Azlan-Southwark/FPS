@@ -8,5 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_and_slide()
-	pass
+	var Col = move_and_collide(velocity * delta)
+	#if Col:
+		#velocity = velocity.bounce(Col.get_normal())
